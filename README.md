@@ -9,6 +9,8 @@ Resources in this repository are meant for use with Terraform 1.3.6 (Check the v
 
 -   [Terraform](https://www.terraform.io/downloads.html) >= 1.3.6
 
+**Note:** See [Installation-Guide](https://gist.github.com/anupam-sy/7458df6506e8e3cfb28c0ff56fab546a) on how to install Terraform.
+
 ### Permissions Requirement
 In order to execute terraform code using CLI-Driven workflow of TFC (Terraform Cloud):
 
