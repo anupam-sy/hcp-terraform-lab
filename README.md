@@ -15,7 +15,7 @@ In order to execute terraform code using CLI-Driven workflow of TFC (Terraform C
 1. Create a Service Account on Google Cloud Platform and grant the following roles. Access can be more fine-grained to follow Principle of least privilege (PoLP).
 - `roles/resourcemanager.projectOwner` on all the projects where you want to house your resources using service account's email.
 
-2. Create a JSON Key for your service account and save the service account key content in a Terraform Cloud environment variable called "GOOGLE_CREDENTIALS". Make sure to get the content of the JSON file using (Remove the newline characters from your JSON key file): `cat sa-key.json | tr -s '\n' ' '`. Don't forget to mark the env variable as Sensitive on TFC workspace. All runs within the workspace will use the GOOGLE_CREDENTIALS variable to authenticate with Google Cloud Platform.
+2. Create a JSON Key for your service account and save the service account key content in a Terraform Cloud environment variable called "GOOGLE_CREDENTIALS". Make sure to get the content of the JSON file using: `cat sa-key.json | jq -c`. Don't forget to mark the env variable as Sensitive on TFC workspace. All runs within the workspace will use the GOOGLE_CREDENTIALS variable to authenticate with Google Cloud Platform.
 
 3. Create an account on terraform cloud (https://app.terraform.io/) and create an organization. Then create a workspace inside the organization.
 
@@ -34,3 +34,4 @@ In order to execute terraform code using CLI-Driven workflow of TFC (Terraform C
 - https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
 - https://developer.hashicorp.com/terraform/cli/commands/login
 - https://developer.hashicorp.com/terraform/cli/cloud/settings
+- https://support.hashicorp.com/hc/en-us/articles/4406586874387-How-to-set-up-Google-Cloud-GCP-credentials-in-Terraform-Cloud
