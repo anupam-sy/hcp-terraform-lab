@@ -37,4 +37,8 @@ resource "google_storage_object_access_control" "static_site_objects_acl" {
   bucket = google_storage_bucket.static_site.name
   role   = "READER"
   entity = "allUsers"
+
+  depends_on = [
+    google_storage_bucket_object.static_site_objects
+  ]
 }
